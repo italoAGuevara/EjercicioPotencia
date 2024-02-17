@@ -3,25 +3,22 @@
 public class Main {
     public static void main(String[] args) {
         
-        int resultado;
+        long resultado;
 
-        resultado = Potencia(2,4);
+        resultado = potencia(10,10);
         
         System.out.println("Resultado => " + resultado);
     }
 
 
-    public static int Potencia(int base, int potencia){
+    public static long potencia(int base, int exponente){
         
-        if (potencia == 0) {
+        if (exponente == 0) {
             return 1;
         }
- 
-        if (potencia == 1) {
-            return base;
-        }
         
-        return base + Potencia(base, potencia - 1);
+        // Caso recursivo: multiplicar la base por el resultado de la llamada recursiva con exponente reducido en 1
+        return base * potencia(base, exponente - 1);
     }
     
 }
