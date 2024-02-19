@@ -5,20 +5,18 @@ public class Main {
         
         long resultado;
 
-        resultado = potencia(10,10);
-        
-        System.out.println("Resultado => " + resultado);
-    }
+        try {
+            resultado = Potencia.potencia(5,5);    
+            
+            System.out.println("OK 5^5 => " + resultado);        
 
-
-    public static long potencia(int base, int exponente){
-        
-        if (exponente == 0) {
-            return 1;
+        } catch (Exception e) {
+            
+            System.out.println("exception => " + e.getMessage());
+           
         }
-        
-        // Caso recursivo: multiplicar la base por el resultado de la llamada recursiva con exponente reducido en 1
-        return base * potencia(base, exponente - 1);
     }
+
+
     
 }
